@@ -5,20 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Жартівливий медичний антистрес-сайт для студентки-медика." />
   <title>MedLife — Медичний антистрес</title>
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=8" />
   <style>
     .ilona-btn{
+      display:block;
       width:100%;
       margin-top:28px;
       padding:32px 24px;
       border-radius:24px;
+      text-align:center;
+      text-decoration:none;
+      color:#fff;
       font-size:clamp(28px,6vw,56px);
       font-weight:900;
       text-transform:uppercase;
       background:linear-gradient(135deg,#ff2f76,#ff8a5b);
       box-shadow:0 18px 50px rgba(255,47,118,.45);
     }
-    .modal{
+    .prank-screen{
       position:fixed;
       inset:0;
       display:none;
@@ -26,38 +30,55 @@
       justify-content:center;
       padding:24px;
       background:radial-gradient(circle at center,#2a0d25,#070a16 70%);
-      z-index:99999;
-    }
-    .modal.show{display:flex}
-    .modal-card{
-      width:100%;
-      max-width:1100px;
+      z-index:999999;
       text-align:center;
-      padding:40px 24px;
+      overflow:auto;
     }
-    .modal-emoji{font-size:clamp(80px,18vw,220px);line-height:1}
-    .modal-card h2{
-      margin:20px auto 12px;
-      max-width:1000px;
-      font-size:clamp(54px,10vw,140px);
-      line-height:.95;
-      letter-spacing:-.04em;
+    .prank-screen:target{display:flex}
+    .prank-inner{width:100%;max-width:1200px}
+    .prank-emoji{font-size:clamp(110px,24vw,300px);line-height:1}
+    .prank-title{
+      margin:20px auto 16px;
+      max-width:1100px;
+      font-size:clamp(56px,11vw,150px);
+      line-height:.9;
+      letter-spacing:-.05em;
       text-transform:uppercase;
+      color:#fff;
     }
-    .modal-card p{
-      margin:24px auto;
-      max-width:850px;
-      color:#d3d8eb;
+    .prank-text{
+      margin:26px auto;
+      max-width:900px;
+      color:#d9deef;
       font-size:clamp(24px,4vw,48px);
-      line-height:1.15;
+      line-height:1.1;
     }
-    .modal-ok{
+    .prank-ok{
+      display:inline-block;
+      min-width:min(440px,90vw);
       margin-top:24px;
-      min-width:min(420px,90vw);
       padding:24px 36px;
       border-radius:20px;
+      text-decoration:none;
+      color:#fff;
+      background:linear-gradient(135deg,#ff2f76,#ff8a5b);
       font-size:clamp(28px,4vw,46px);
       font-weight:900;
+      box-shadow:0 14px 40px rgba(255,47,118,.38);
+    }
+    .baboon-img{
+      width:min(94vw,1200px);
+      max-height:72vh;
+      object-fit:cover;
+      border-radius:28px;
+      box-shadow:0 24px 80px rgba(0,0,0,.5);
+    }
+    .baboon-title{
+      margin-top:22px;
+      font-size:clamp(38px,7vw,90px);
+      font-weight:900;
+      color:#fff;
+      text-transform:uppercase;
     }
   </style>
 </head>
@@ -67,7 +88,7 @@
       <div class="badge">🩺 MedLife • антистрес для майбутнього медика</div>
       <h1>Медичний сайт,<br>який нічого не лікує 😌</h1>
       <p class="sub">Зате лікує нудьгу, переживання перед парою й наслідки фрази: «сьогодні просто легке чергування».</p>
-      <button id="ilonaButton" class="ilona-btn">Ілона, не натискай сюди 😏</button>
+      <a class="ilona-btn" href="#prank1">Ілона, не натискай сюди 😏</a>
     </section>
 
     <section class="grid">
@@ -82,52 +103,32 @@
     <footer class="footer">Цей сайт — жарт. Він не дає медичних рекомендацій і не замінює лікаря.</footer>
   </main>
 
-  <div id="prankModal" class="modal" aria-hidden="true">
-    <div class="modal-card">
-      <div id="prankEmoji" class="modal-emoji">😏</div>
-      <h2 id="prankTitle">А Я Ж КАЗАВ НЕ НАЖИМАЙ</h2>
-      <p id="prankText">Ну все. Тепер назад дороги нема 😌</p>
-      <button id="prankOk" class="modal-ok">ОК</button>
+  <section id="prank1" class="prank-screen">
+    <div class="prank-inner">
+      <div class="prank-emoji">😏</div>
+      <div class="prank-title">А Я Ж КАЗАВ НЕ НАЖИМАЙ</div>
+      <div class="prank-text">Ну все. Тепер назад дороги нема 😌</div>
+      <a class="prank-ok" href="#heart">ОК</a>
     </div>
-  </div>
+  </section>
 
-  <script src="script.js?v=4"></script>
-  <script>
-    (() => {
-      const btn = document.getElementById('ilonaButton');
-      const modal = document.getElementById('prankModal');
-      const title = document.getElementById('prankTitle');
-      const text = document.getElementById('prankText');
-      const emoji = document.getElementById('prankEmoji');
-      const ok = document.getElementById('prankOk');
-      let step = 0;
+  <section id="heart" class="prank-screen">
+    <div class="prank-inner">
+      <div class="prank-emoji">❤️</div>
+      <div class="prank-title">СЕРДЕЧКО ДЛЯ ІЛОНИ</div>
+      <div class="prank-text">Ну ладно, ти все ж мила 😄</div>
+      <a class="prank-ok" href="#baboon">ЗАКРИТИ</a>
+    </div>
+  </section>
 
-      btn.addEventListener('click', () => {
-        step = 1;
-        emoji.textContent = '😏';
-        title.textContent = 'А Я Ж КАЗАВ НЕ НАЖИМАЙ';
-        text.textContent = 'Ну все. Тепер назад дороги нема 😌';
-        ok.textContent = 'ОК';
-        modal.classList.add('show');
-        modal.setAttribute('aria-hidden','false');
-        document.body.style.overflow = 'hidden';
-      });
+  <section id="baboon" class="prank-screen">
+    <div class="prank-inner">
+      <img class="baboon-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Hamadryas%20baboon.jpg" alt="Бабуїн" />
+      <div class="baboon-title">БАБУЇН З'ЯВИВСЯ 😂</div>
+      <a class="prank-ok" href="#">ВСЕ</a>
+    </div>
+  </section>
 
-      ok.addEventListener('click', () => {
-        if(step === 1){
-          step = 2;
-          emoji.textContent = '😂';
-          title.textContent = 'ОЙ, ІЛОНА, НУ ТИ Й ПОПАЛАСЬ';
-          text.textContent = 'Тепер офіційно можна сміятися 😄';
-          ok.textContent = 'ЗАКРИТИ';
-        } else {
-          modal.classList.remove('show');
-          modal.setAttribute('aria-hidden','true');
-          document.body.style.overflow = '';
-          step = 0;
-        }
-      });
-    })();
-  </script>
+  <script src="script.js?v=8"></script>
 </body>
 </html>
