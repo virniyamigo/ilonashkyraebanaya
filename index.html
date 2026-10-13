@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Жартівливий медичний антистрес-сайт для студентки-медика." />
+  <title>MedLife — Медичний антистрес</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="badge">🩺 MedLife • антистрес для майбутнього медика</div>
+      <h1>Медичний сайт,<br>який нічого не лікує 😌</h1>
+      <p class="sub">
+        Зате лікує нудьгу, переживання перед парою й наслідки фрази:
+        «сьогодні просто легке чергування».
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>🧠 Діагноз дня</h2>
+        <p class="muted">Абсолютно не медичний. Абсолютно серйозний.</p>
+        <button data-action="diagnose">Поставити діагноз</button>
+        <div id="diag" class="result">Натисни кнопку. Пацієнт поки живий.</div>
+      </article>
+
+      <article class="card">
+        <h2>❤️ Пульс медика</h2>
+        <div class="pulse" aria-hidden="true">♥</div>
+        <p class="muted">Стан після слів: «а можна ще одне маленьке питання?»</p>
+        <button class="alt" data-action="pulse">Перевірити пульс</button>
+        <div id="pulse" class="result">Пульс: підозріло нормальний.</div>
+      </article>
+
+      <article class="card">
+        <h2>☕ Рівень життєздатності</h2>
+        <p class="muted">Науково доведено ніким.</p>
+        <button class="green" data-action="coffee">Додати каву</button>
+        <button class="alt" data-action="reset-coffee">Обнулити</button>
+
+        <div class="meter" aria-label="Рівень життєздатності">
+          <div id="coffeeBar"></div>
+        </div>
+        <div id="coffeeText" class="result">20% — ще людина, але вже студент-медик.</div>
+      </article>
+
+      <article class="card">
+        <h2>🚑 Режим чергування</h2>
+        <p class="muted">Визначає, що сьогодні буде «спокійно».</p>
+        <button data-action="shift">Запустити прогноз</button>
+        <div id="shift" class="result">
+          Шанс спокійного чергування: 100%*
+          <br />
+          <span class="tiny">*до першого дзвінка</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>💉 Медична мудрість</h2>
+        <p class="muted">Сертифіковано кафедрою виживання.</p>
+        <button class="alt" data-action="wisdom">Отримати мудрість</button>
+        <div id="wisdom" class="result">«Якщо викладач сказав “це просто” — готуйся.»</div>
+      </article>
+
+      <article class="card">
+        <h2>🫀 Екстрена кнопка</h2>
+        <p class="muted">Натискати при гострому дефіциті настрою.</p>
+        <button data-action="emergency">🚨 ЕКСТРЕНО</button>
+        <div id="emergency" class="result">Система готова врятувати день.</div>
+      </article>
+    </section>
+
+    <footer class="footer">
+      Цей сайт — жарт. Він не дає медичних рекомендацій і не замінює лікаря.
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
