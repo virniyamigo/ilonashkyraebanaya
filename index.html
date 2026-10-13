@@ -6,76 +6,36 @@
   <meta name="description" content="Жартівливий медичний антистрес-сайт для студентки-медика." />
   <title>MedLife — Медичний антистрес</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .ilona-btn{width:100%;margin-top:24px;padding:18px 22px;font-size:clamp(18px,3vw,28px);border-radius:18px;background:linear-gradient(135deg,#ff3b7a,#ff8a5b);box-shadow:0 14px 35px rgba(255,59,122,.35)}
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(4,7,18,.78);backdrop-filter:blur(8px);z-index:999}
+    .modal.show{display:flex}
+    .modal-card{width:min(520px,100%);padding:34px 28px;text-align:center;border-radius:28px;border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg,#161f3f,#10162c);box-shadow:0 30px 80px rgba(0,0,0,.45)}
+    .modal-emoji{font-size:64px}
+    .modal-card h2{font-size:clamp(28px,5vw,46px);margin:12px 0}
+    .modal-card p{color:#aeb8d7;font-size:18px}
+    .modal-ok{min-width:150px;margin-top:10px;font-size:18px}
+  </style>
 </head>
 <body>
   <main class="wrap">
     <section class="hero">
       <div class="badge">🩺 MedLife • антистрес для майбутнього медика</div>
       <h1>Медичний сайт,<br>який нічого не лікує 😌</h1>
-      <p class="sub">
-        Зате лікує нудьгу, переживання перед парою й наслідки фрази:
-        «сьогодні просто легке чергування».
-      </p>
+      <p class="sub">Зате лікує нудьгу, переживання перед парою й наслідки фрази: «сьогодні просто легке чергування».</p>
       <button class="ilona-btn" data-action="ilona-start">Ілона, не натискай сюди 😏</button>
     </section>
 
     <section class="grid">
-      <article class="card">
-        <h2>🧠 Діагноз дня</h2>
-        <p class="muted">Абсолютно не медичний. Абсолютно серйозний.</p>
-        <button data-action="diagnose">Поставити діагноз</button>
-        <div id="diag" class="result">Натисни кнопку. Пацієнт поки живий.</div>
-      </article>
-
-      <article class="card">
-        <h2>❤️ Пульс медика</h2>
-        <div class="pulse" aria-hidden="true">♥</div>
-        <p class="muted">Стан після слів: «а можна ще одне маленьке питання?»</p>
-        <button class="alt" data-action="pulse">Перевірити пульс</button>
-        <div id="pulse" class="result">Пульс: підозріло нормальний.</div>
-      </article>
-
-      <article class="card">
-        <h2>☕ Рівень життєздатності</h2>
-        <p class="muted">Науково доведено ніким.</p>
-        <button class="green" data-action="coffee">Додати каву</button>
-        <button class="alt" data-action="reset-coffee">Обнулити</button>
-
-        <div class="meter" aria-label="Рівень життєздатності">
-          <div id="coffeeBar"></div>
-        </div>
-        <div id="coffeeText" class="result">20% — ще людина, але вже студент-медик.</div>
-      </article>
-
-      <article class="card">
-        <h2>🚑 Режим чергування</h2>
-        <p class="muted">Визначає, що сьогодні буде «спокійно».</p>
-        <button data-action="shift">Запустити прогноз</button>
-        <div id="shift" class="result">
-          Шанс спокійного чергування: 100%*
-          <br />
-          <span class="tiny">*до першого дзвінка</span>
-        </div>
-      </article>
-
-      <article class="card">
-        <h2>💉 Медична мудрість</h2>
-        <p class="muted">Сертифіковано кафедрою виживання.</p>
-        <button class="alt" data-action="wisdom">Отримати мудрість</button>
-        <div id="wisdom" class="result">«Якщо викладач сказав “це просто” — готуйся.»</div>
-      </article>
-
-      <article class="card">
-        <h2>🫀 Екстрена кнопка</h2>
-        <p class="muted">Натискати при гострому дефіциті настрою.</p>
-        <button data-action="emergency">🚨 ЕКСТРЕНО</button>
-        <div id="emergency" class="result">Система готова врятувати день.</div>
-      </article>
+      <article class="card"><h2>🧠 Діагноз дня</h2><p class="muted">Абсолютно не медичний. Абсолютно серйозний.</p><button data-action="diagnose">Поставити діагноз</button><div id="diag" class="result">Натисни кнопку. Пацієнт поки живий.</div></article>
+      <article class="card"><h2>❤️ Пульс медика</h2><div class="pulse" aria-hidden="true">♥</div><p class="muted">Стан після слів: «а можна ще одне маленьке питання?»</p><button class="alt" data-action="pulse">Перевірити пульс</button><div id="pulse" class="result">Пульс: підозріло нормальний.</div></article>
+      <article class="card"><h2>☕ Рівень життєздатності</h2><p class="muted">Науково доведено ніким.</p><button class="green" data-action="coffee">Додати каву</button><button class="alt" data-action="reset-coffee">Обнулити</button><div class="meter" aria-label="Рівень життєздатності"><div id="coffeeBar"></div></div><div id="coffeeText" class="result">20% — ще людина, але вже студент-медик.</div></article>
+      <article class="card"><h2>🚑 Режим чергування</h2><p class="muted">Визначає, що сьогодні буде «спокійно».</p><button data-action="shift">Запустити прогноз</button><div id="shift" class="result">Шанс спокійного чергування: 100%*<br><span class="tiny">*до першого дзвінка</span></div></article>
+      <article class="card"><h2>💉 Медична мудрість</h2><p class="muted">Сертифіковано кафедрою виживання.</p><button class="alt" data-action="wisdom">Отримати мудрість</button><div id="wisdom" class="result">«Якщо викладач сказав “це просто” — готуйся.»</div></article>
+      <article class="card"><h2>🫀 Екстрена кнопка</h2><p class="muted">Натискати при гострому дефіциті настрою.</p><button data-action="emergency">🚨 ЕКСТРЕНО</button><div id="emergency" class="result">Система готова врятувати день.</div></article>
     </section>
 
-    <footer class="footer">
-      Цей сайт — жарт. Він не дає медичних рекомендацій і не замінює лікаря.
-    </footer>
+    <footer class="footer">Цей сайт — жарт. Він не дає медичних рекомендацій і не замінює лікаря.</footer>
   </main>
 
   <div id="prankModal" class="modal" aria-hidden="true">
