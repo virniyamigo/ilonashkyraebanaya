@@ -141,6 +141,30 @@ button.green{
   color:#062116;
 }
 
+.ilona-btn{
+  display:block;
+  width:100%;
+  margin:30px 0 0;
+  padding:30px 24px;
+  border-radius:24px;
+  font-size:clamp(26px,5vw,48px);
+  font-weight:900;
+  letter-spacing:-0.03em;
+  text-transform:uppercase;
+  background:linear-gradient(135deg,#ff3d7f,#ff7aa8,#ff3d7f);
+  box-shadow:0 16px 44px rgba(255,61,127,.42),0 0 0 4px rgba(255,255,255,.06) inset;
+  animation:ilonaPulse 1.8s infinite;
+}
+
+.ilona-btn:hover{
+  transform:translateY(-4px) scale(1.01);
+}
+
+@keyframes ilonaPulse{
+  0%,100%{box-shadow:0 16px 44px rgba(255,61,127,.42),0 0 0 4px rgba(255,255,255,.06) inset}
+  50%{box-shadow:0 20px 58px rgba(255,61,127,.65),0 0 0 4px rgba(255,255,255,.10) inset}
+}
+
 .result{
   min-height:54px;
   margin-top:14px;
@@ -178,6 +202,34 @@ button.green{
   transition:width .4s ease;
 }
 
+.modal{
+  position:fixed;
+  inset:0;
+  display:none;
+  place-items:center;
+  padding:20px;
+  background:rgba(4,7,18,.78);
+  backdrop-filter:blur(12px);
+  z-index:1000;
+}
+
+.modal.show{display:grid}
+
+.modal-card{
+  width:min(560px,100%);
+  padding:34px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:28px;
+  background:linear-gradient(180deg,#171f3e,#0f1630);
+  text-align:center;
+  box-shadow:0 30px 100px rgba(0,0,0,.45);
+}
+
+.modal-emoji{font-size:72px}
+.modal-card h2{font-size:clamp(30px,6vw,50px);margin:10px 0}
+.modal-card p{color:var(--muted);font-size:18px}
+.modal-ok{min-width:180px;font-size:22px;padding:16px 26px}
+
 .footer{
   margin-top:18px;
   color:var(--muted);
@@ -206,6 +258,11 @@ button.green{
 
   .card{
     min-height:auto;
+  }
+
+  .ilona-btn{
+    padding:24px 16px;
+    border-radius:20px;
   }
 }
 
