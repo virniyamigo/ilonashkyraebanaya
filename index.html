@@ -5,110 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Жартівливий медичний антистрес-сайт для студентки-медика." />
   <title>MedLife — Медичний антистрес</title>
-  <link rel="stylesheet" href="style.css?v=9" />
+  <link rel="stylesheet" href="style.css?v=10" />
   <style>
-    .ilona-btn{
-      display:block;
-      width:100%;
-      margin-top:28px;
-      padding:32px 24px;
-      border-radius:24px;
-      text-align:center;
-      text-decoration:none;
-      color:#fff;
-      font-size:clamp(28px,6vw,56px);
-      font-weight:900;
-      text-transform:uppercase;
-      background:linear-gradient(135deg,#ff2f76,#ff8a5b);
-      box-shadow:0 18px 50px rgba(255,47,118,.45);
-    }
-    .quiz-link{
-      display:inline-block;
-      margin-top:8px;
-      padding:14px 18px;
-      border-radius:14px;
-      text-decoration:none;
-      color:#08111f;
-      font-weight:900;
-      background:linear-gradient(135deg,#40c9ff,#6ee7ff);
-    }
-    .prank-screen{
-      position:fixed;
-      inset:0;
-      display:none;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
-      background:radial-gradient(circle at center,#2a0d25,#070a16 70%);
-      z-index:999999;
-      text-align:center;
-      overflow:auto;
-    }
-    .prank-screen:target{display:flex}
-    .prank-inner{width:100%;max-width:1200px}
-    .prank-emoji{font-size:clamp(110px,24vw,300px);line-height:1}
-    .prank-title{
-      margin:20px auto 16px;
-      max-width:1100px;
-      font-size:clamp(56px,11vw,150px);
-      line-height:.9;
-      letter-spacing:-.05em;
-      text-transform:uppercase;
-      color:#fff;
-    }
-    .prank-text{
-      margin:26px auto;
-      max-width:900px;
-      color:#d9deef;
-      font-size:clamp(24px,4vw,48px);
-      line-height:1.1;
-    }
-    .prank-ok{
-      display:inline-block;
-      min-width:min(440px,90vw);
-      margin-top:24px;
-      padding:24px 36px;
-      border-radius:20px;
-      text-decoration:none;
-      color:#fff;
-      background:linear-gradient(135deg,#ff2f76,#ff8a5b);
-      font-size:clamp(28px,4vw,46px);
-      font-weight:900;
-      box-shadow:0 14px 40px rgba(255,47,118,.38);
-    }
-    .quiz-choices{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:16px;
-      margin-top:28px;
-    }
-    .quiz-choice{
-      display:inline-block;
-      min-width:min(260px,85vw);
-      padding:18px 22px;
-      border-radius:18px;
-      text-decoration:none;
-      color:#fff;
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.16);
-      font-size:clamp(22px,3vw,34px);
-      font-weight:900;
-    }
-    .baboon-img{
-      width:min(94vw,1200px);
-      max-height:72vh;
-      object-fit:cover;
-      border-radius:28px;
-      box-shadow:0 24px 80px rgba(0,0,0,.5);
-    }
-    .baboon-title{
-      margin-top:22px;
-      font-size:clamp(38px,7vw,90px);
-      font-weight:900;
-      color:#fff;
-      text-transform:uppercase;
-    }
+    .ilona-btn{display:block;width:100%;margin-top:28px;padding:32px 24px;border-radius:24px;text-align:center;text-decoration:none;color:#fff;font-size:clamp(28px,6vw,56px);font-weight:900;text-transform:uppercase;background:linear-gradient(135deg,#ff2f76,#ff8a5b);box-shadow:0 18px 50px rgba(255,47,118,.45)}
+    .quiz-link,.quest-link{display:inline-block;margin-top:8px;padding:14px 18px;border-radius:14px;text-decoration:none;color:#08111f;font-weight:900;background:linear-gradient(135deg,#40c9ff,#6ee7ff)}
+    .quest-card{grid-column:1/-1;padding:28px;border-radius:28px;background:linear-gradient(135deg,rgba(126,249,255,.12),rgba(255,47,118,.18));border:1px solid rgba(255,255,255,.14);box-shadow:0 20px 60px rgba(0,0,0,.2)}
+    .quest-card h2{font-size:clamp(28px,5vw,52px);margin:0 0 8px}.quest-card p{font-size:18px;color:#aeb8d7}.quest-link{font-size:22px;padding:18px 26px;margin-top:12px}
+    .prank-screen{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:24px;background:radial-gradient(circle at center,#2a0d25,#070a16 70%);z-index:999999;text-align:center;overflow:auto}.prank-screen:target{display:flex}
+    .prank-inner{width:100%;max-width:1200px}.prank-emoji{font-size:clamp(110px,24vw,300px);line-height:1}.prank-title{margin:20px auto 16px;max-width:1100px;font-size:clamp(56px,11vw,150px);line-height:.9;letter-spacing:-.05em;text-transform:uppercase;color:#fff}.prank-text{margin:26px auto;max-width:900px;color:#d9deef;font-size:clamp(24px,4vw,48px);line-height:1.1}.prank-ok{display:inline-block;min-width:min(440px,90vw);margin-top:24px;padding:24px 36px;border-radius:20px;text-decoration:none;color:#fff;background:linear-gradient(135deg,#ff2f76,#ff8a5b);font-size:clamp(28px,4vw,46px);font-weight:900;box-shadow:0 14px 40px rgba(255,47,118,.38)}
+    .quiz-choices{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:28px}.quiz-choice{display:inline-block;min-width:min(260px,85vw);padding:18px 22px;border-radius:18px;text-decoration:none;color:#fff;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);font-size:clamp(22px,3vw,34px);font-weight:900}.quiz-choice:hover{background:rgba(255,255,255,.18)}
+    .baboon-img{width:min(94vw,1200px);max-height:72vh;object-fit:cover;border-radius:28px;box-shadow:0 24px 80px rgba(0,0,0,.5)}.baboon-title{margin-top:22px;font-size:clamp(38px,7vw,90px);font-weight:900;color:#fff;text-transform:uppercase}
+    .stage{width:min(1000px,94vw);padding:34px;border-radius:30px;background:linear-gradient(180deg,#151d3c,#0d132a);border:1px solid rgba(255,255,255,.12);box-shadow:0 30px 100px rgba(0,0,0,.5)}
+    .stage-kicker{font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:#7df7b2;font-weight:900}.stage h2{font-size:clamp(34px,7vw,78px);line-height:.95;margin:16px 0}.stage p{font-size:clamp(18px,3vw,30px);color:#c7cfe8}.progress{height:14px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;margin:20px 0 28px}.progress>div{height:100%;background:linear-gradient(90deg,#7df7b2,#6ee7ff,#ff6b9a)}
+    .choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:24px}.big-choice{display:flex;align-items:center;justify-content:center;min-height:120px;padding:20px;border-radius:22px;text-decoration:none;color:#fff;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);font-size:clamp(22px,3vw,34px);font-weight:900}.big-choice:hover{transform:translateY(-3px);background:rgba(255,255,255,.12)}
+    .danger-btn{display:inline-block;margin-top:20px;padding:28px 34px;border-radius:50%;width:180px;height:180px;line-height:124px;text-decoration:none;color:#fff;background:radial-gradient(circle at 35% 30%,#ff8b8b,#ff2f2f 60%,#961515);box-shadow:0 20px 60px rgba(255,47,47,.45),inset 0 0 0 8px rgba(255,255,255,.12);font-size:28px;font-weight:900}
+    .loading{font-size:clamp(26px,5vw,56px);font-weight:900}.dots{font-size:72px;letter-spacing:12px;animation:blink 1s infinite}@keyframes blink{50%{opacity:.3}}
+    .certificate{width:min(900px,94vw);padding:40px;border-radius:28px;background:#fff;color:#111;text-align:center;border:12px solid #111}.certificate h2{font-size:clamp(34px,7vw,76px);margin:0}.certificate .name{font-size:clamp(44px,9vw,100px);font-weight:900;margin:22px 0}.certificate p{font-size:clamp(18px,3vw,28px);color:#333}.seal{font-size:90px;margin:20px 0}
+    @media(max-width:720px){.choice-grid{grid-template-columns:1fr}.danger-btn{width:150px;height:150px;line-height:94px}}
   </style>
 </head>
 <body>
@@ -123,63 +36,42 @@
     <section class="grid">
       <article class="card"><h2>🧠 Діагноз дня</h2><p class="muted">Абсолютно не медичний. Абсолютно серйозний.</p><button data-action="diagnose">Поставити діагноз</button><div id="diag" class="result">Натисни кнопку. Пацієнт поки живий.</div></article>
       <article class="card"><h2>❤️ Пульс медика</h2><div class="pulse" aria-hidden="true">♥</div><p class="muted">Стан після слів: «а можна ще одне маленьке питання?»</p><button class="alt" data-action="pulse">Перевірити пульс</button><div id="pulse" class="result">Пульс: підозріло нормальний.</div></article>
-      <article class="card"><h2>☕ Рівень життєздатності</h2><p class="muted">Науково доведено ніким.</p><button class="green" data-action="coffee">Додати каву</button><button class="alt" data-action="reset-coffee">Обнулити</button><div class="meter" aria-label="Рівень життєздатності"><div id="coffeeBar"></div></div><div id="coffeeText" class="result">20% — ще людина, але вже студент-медик.</div></article>
+      <article class="card"><h2>☕ Рівень життєздатності</h2><p class="muted">Науково доведено ніким.</p><button class="green" data-action="coffee">Додати каву</button><button class="alt" data-action="reset-coffee">Обнулити</button><div class="meter"><div id="coffeeBar"></div></div><div id="coffeeText" class="result">20% — ще людина, але вже студент-медик.</div></article>
       <article class="card"><h2>🚑 Режим чергування</h2><p class="muted">Визначає, що сьогодні буде «спокійно».</p><button data-action="shift">Запустити прогноз</button><div id="shift" class="result">Шанс спокійного чергування: 100%*<br><span class="tiny">*до першого дзвінка</span></div></article>
       <article class="card"><h2>💉 Медична мудрість</h2><p class="muted">Сертифіковано кафедрою виживання.</p><button class="alt" data-action="wisdom">Отримати мудрість</button><div id="wisdom" class="result">«Якщо викладач сказав “це просто” — готуйся.»</div></article>
       <article class="card"><h2>🫀 Екстрена кнопка</h2><p class="muted">Натискати при гострому дефіциті настрою.</p><button data-action="emergency">🚨 ЕКСТРЕНО</button><div id="emergency" class="result">Система готова врятувати день.</div></article>
       <article class="card"><h2>🧪 Секретний тест медика</h2><p class="muted">Одне питання. Відповідь визначить твою долю.</p><a class="quiz-link" href="#quiz">Пройти тест</a></article>
+
+      <article class="quest-card">
+        <div class="stage-kicker">Новий режим</div>
+        <h2>🎮 ILONA: MEDIC SURVIVAL QUEST</h2>
+        <p>Великий інтерактивний квест. 5 етапів, дивні рішення, червона кнопка, фальшива перевірка системи й фінальний сертифікат.</p>
+        <a class="quest-link" href="#quest1">ЗАПУСТИТИ КВЕСТ 🚨</a>
+      </article>
     </section>
 
     <footer class="footer">Цей сайт — жарт. Він не дає медичних рекомендацій і не замінює лікаря.</footer>
   </main>
 
-  <section id="prank1" class="prank-screen">
-    <div class="prank-inner">
-      <div class="prank-emoji">😏</div>
-      <div class="prank-title">А Я Ж КАЗАВ НЕ НАЖИМАЙ</div>
-      <div class="prank-text">Ну все. Тепер назад дороги нема 😌</div>
-      <a class="prank-ok" href="#heart">ОК</a>
-    </div>
-  </section>
+  <section id="prank1" class="prank-screen"><div class="prank-inner"><div class="prank-emoji">😏</div><div class="prank-title">А Я Ж КАЗАВ НЕ НАЖИМАЙ</div><div class="prank-text">Ну все. Тепер назад дороги нема 😌</div><a class="prank-ok" href="#heart">ОК</a></div></section>
+  <section id="heart" class="prank-screen"><div class="prank-inner"><div class="prank-emoji">❤️</div><div class="prank-title">СЕРДЕЧКО ДЛЯ ІЛОНИ</div><div class="prank-text">Ну ладно, ти все ж мила 😄</div><a class="prank-ok" href="#baboon">ЗАКРИТИ</a></div></section>
+  <section id="baboon" class="prank-screen"><div class="prank-inner"><img class="baboon-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Hamadryas%20baboon.jpg" alt="Бабуїн" /><div class="baboon-title">БАБУЇН З'ЯВИВСЯ 😂</div><a class="prank-ok" href="#">ВСЕ</a></div></section>
 
-  <section id="heart" class="prank-screen">
-    <div class="prank-inner">
-      <div class="prank-emoji">❤️</div>
-      <div class="prank-title">СЕРДЕЧКО ДЛЯ ІЛОНИ</div>
-      <div class="prank-text">Ну ладно, ти все ж мила 😄</div>
-      <a class="prank-ok" href="#baboon">ЗАКРИТИ</a>
-    </div>
-  </section>
+  <section id="quiz" class="prank-screen"><div class="prank-inner"><div class="prank-emoji">🩺</div><div class="prank-title" style="font-size:clamp(42px,8vw,110px)">ЩО РЯТУЄ МЕДИКА О 3 НОЧІ?</div><div class="quiz-choices"><a class="quiz-choice" href="#quizresult">☕ КАВА</a><a class="quiz-choice" href="#quizresult">😴 СОН</a><a class="quiz-choice" href="#quizresult">🧠 СИЛА ВОЛІ</a></div></div></section>
+  <section id="quizresult" class="prank-screen"><div class="prank-inner"><div class="prank-emoji">🏝️</div><div class="prank-title" style="font-size:clamp(46px,9vw,125px)">НЕПРАВИЛЬНО</div><div class="prank-text">Правильна відповідь: ВІДПУСТКА 😂</div><a class="prank-ok" href="#">Я ЗРОЗУМІЛА</a></div></section>
 
-  <section id="baboon" class="prank-screen">
-    <div class="prank-inner">
-      <img class="baboon-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Hamadryas%20baboon.jpg" alt="Бабуїн" />
-      <div class="baboon-title">БАБУЇН З'ЯВИВСЯ 😂</div>
-      <a class="prank-ok" href="#">ВСЕ</a>
-    </div>
-  </section>
+  <section id="quest1" class="prank-screen"><div class="stage"><div class="stage-kicker">Етап 1/5 • 20%</div><div class="progress"><div style="width:20%"></div></div><h2>🚑 ТЕРМІНОВИЙ ВИКЛИК</h2><p>Пацієнт каже: «Я погуглив симптоми й у мене все». Твої дії?</p><div class="choice-grid"><a class="big-choice" href="#quest2">🩺 Спокійно оглянути</a><a class="big-choice" href="#quest2">📵 Забрати Google</a><a class="big-choice" href="#quest2">☕ Спочатку кава</a><a class="big-choice" href="#quest2">🏃 Втекти у відпустку</a></div></div></section>
 
-  <section id="quiz" class="prank-screen">
-    <div class="prank-inner">
-      <div class="prank-emoji">🩺</div>
-      <div class="prank-title" style="font-size:clamp(42px,8vw,110px)">ЩО РЯТУЄ МЕДИКА О 3 НОЧІ?</div>
-      <div class="quiz-choices">
-        <a class="quiz-choice" href="#quizresult">☕ КАВА</a>
-        <a class="quiz-choice" href="#quizresult">😴 СОН</a>
-        <a class="quiz-choice" href="#quizresult">🧠 СИЛА ВОЛІ</a>
-      </div>
-    </div>
-  </section>
+  <section id="quest2" class="prank-screen"><div class="stage"><div class="stage-kicker">Етап 2/5 • 40%</div><div class="progress"><div style="width:40%"></div></div><h2>🧠 ВИБЕРИ СУПЕРСИЛУ</h2><p>На одне чергування можна взяти тільки одну.</p><div class="choice-grid"><a class="big-choice" href="#quest3">☕ Нескінченна кава</a><a class="big-choice" href="#quest3">😴 Сон за 3 хвилини</a><a class="big-choice" href="#quest3">🧠 Пам’ять на 100%</a><a class="big-choice" href="#quest3">🙉 Не чути «а ще питання»</a></div></div></section>
 
-  <section id="quizresult" class="prank-screen">
-    <div class="prank-inner">
-      <div class="prank-emoji">🏝️</div>
-      <div class="prank-title" style="font-size:clamp(46px,9vw,125px)">НЕПРАВИЛЬНО</div>
-      <div class="prank-text">Правильна відповідь: ВІДПУСТКА 😂</div>
-      <a class="prank-ok" href="#">Я ЗРОЗУМІЛА</a>
-    </div>
-  </section>
+  <section id="quest3" class="prank-screen"><div class="stage"><div class="stage-kicker">Етап 3/5 • 60%</div><div class="progress"><div style="width:60%"></div></div><h2>⚠️ НЕБЕЗПЕЧНА КНОПКА</h2><p>На ній написано: «НЕ НАТИСКАТИ». Ти ж Ілона, тому вибір очевидний.</p><a class="danger-btn" href="#quest4">НЕ ТИСНИ</a></div></section>
 
-  <script src="script.js?v=9"></script>
+  <section id="quest4" class="prank-screen"><div class="stage"><div class="stage-kicker">Етап 4/5 • 80%</div><div class="progress"><div style="width:80%"></div></div><div class="loading">🔬 СИСТЕМА АНАЛІЗУЄ РІВЕНЬ МЕДИЧНОЇ АДЕКВАТНОСТІ</div><div class="dots">•••</div><p>Результат майже готовий. Система трохи в шоці.</p><a class="prank-ok" href="#quest5">ПОКАЗАТИ РЕЗУЛЬТАТ</a></div></section>
+
+  <section id="quest5" class="prank-screen"><div class="stage"><div class="stage-kicker">Етап 5/5 • 100%</div><div class="progress"><div style="width:100%"></div></div><h2>✅ ТЕСТ ПРОЙДЕНО</h2><p>Виявлено: гумор — стабільний, кава — критично важлива, бажання натискати заборонені кнопки — невиліковне.</p><a class="prank-ok" href="#certificate">ОТРИМАТИ СЕРТИФІКАТ</a></div></section>
+
+  <section id="certificate" class="prank-screen"><div class="certificate"><div style="font-size:18px;letter-spacing:.2em;font-weight:900">MEDLIFE OFFICIAL DOCUMENT</div><div class="seal">🩺❤️</div><h2>СЕРТИФІКАТ</h2><p>Цим документом підтверджується, що</p><div class="name">ІЛОНА</div><p><strong>офіційно пережила MedLife Survival Quest</strong><br>і має право на каву, сон, меми та ігнорування фрази «а можна одне питання?»</p><p style="margin-top:28px"><strong>Рівень виживання: 100/100</strong><br>Рівень серйозності цього сертифіката: 0/100 😂</p><a class="prank-ok" href="#" style="color:#fff">ЗАБРАТИ НАГОРОДУ</a></div></section>
+
+  <script src="script.js?v=10"></script>
 </body>
 </html>
